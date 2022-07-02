@@ -1,13 +1,15 @@
 // TODO: Include packages needed for this application
+const fs = require('fs');
+const util = require('util');
 var inquirer = require('inquirer');
-console.log(inquirer)
+const writeFileAsync = util.promisify(fs.writeFile);
 
 // TODO: Create an array of questions for user input
 const questions = () => {
     return inquirer.prompt([
         {
             type: 'input',
-            name: 'project title',
+            name: 'title',
             message: 'What is the title of your project?'
         },
 
@@ -45,7 +47,7 @@ const questions = () => {
             type: 'list',
             name: 'license',
             message: 'What license does your project have?',
-            choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'BSD 2', 'GPL', 'LGPL', 'None']
+            choices: ['MIT', 'APACHE_2.0', 'BSD_3', 'BSD_2', 'Other', 'None']
         },
 
         {
@@ -68,11 +70,52 @@ const questions = () => {
     ]);
 }
 
+function renderLicense(license) {
+    return `![License: ${license}](https://img.shields.io/badge/License-${license}-lightblue.svg)`
+}
+
 // // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
+function writeReadMe (data) {
+return `
+# ${data.title}
+
+## Description:
+${data.description}
+
+## Table of Contents:
+* [License](#license)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Tests](#tests)
+* [Contributing](#contributing)
+
+### License:
+${renderLicense(data.license)}
+
+### Installation:
+Open the terminal/console and run the following to install the necessary dependencies:
+${data.installations}
+
+### Usage:
+${data.usage}
+
+### Tests:
+To run a test, open the terminal/console and run the following:
+${data.tests}
+
+### Contributing:
+${data.contribute}
+
+### Questions:
+If you have any questions feel free to contact me, ${data.author}, on GitHub at: (https://github.com/${data.username})
+or email me at: ${data.email}
+`
+}
 
 // // TODO: Create a function to initialize app
-// function init() {}
+questions().then((data) => writeFileAsync('./dist/README.md', writeReadMe(data)))
+    .then(() => console.log('New README.md written successfully'))
+    .catch((err) => console.log(err));
 
 // // Function call to initialize app
 // init();
