@@ -1,8 +1,8 @@
 
-# sdfsdfs
+# ReadMe Generator
 
-## Description
-werwerwe
+## Description:
+Generates README.md file based on prompts/questions answered in this application.
 
 ## Table of Contents:
 * [License](#license)
@@ -12,22 +12,22 @@ werwerwe
 * [Contributing](#contributing)
 
 ### License:
-![License: BSD_3](https://img.shields.io/badge/License-BSD_3-lightblue.svg)
+![License: MIT](https://img.shields.io/badge/License-MIT-lightblue.svg)
 
 ### Installation:
 Open the terminal/console and run the following to install the necessary dependencies:
-sdfsdf
+npm install
 
 ### Usage:
-wrwer
+Need to have node.js installed on computer, as well as a package-lock.json file and package.json file in the root folder.
 
 ### Tests:
 To run a test, open the terminal/console and run the following:
-sfsdfds
+no tests at this time
 
 ### Contributing:
-werwere
+no contributions being taken at this time
 
 ### Questions:
-If you have any questions feel free to contact me, sdfsdf, on GitHub at: (https://github.com/werwer)
-or email me at: sdfsd
+If you have any questions feel free to contact me, Andrew Secore, on GitHub at: (https://github.com/Stricker2)
+or email me at: acsecore21@gmail.com
