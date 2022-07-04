@@ -1,10 +1,10 @@
-// TODO: Include packages needed for this application
+// packages needed for this application
 const fs = require('fs');
 const util = require('util');
 var inquirer = require('inquirer');
 const writeFileAsync = util.promisify(fs.writeFile);
 
-// TODO: Create an array of questions for user input
+// array of questions for user input
 const questions = () => {
     return inquirer.prompt([
         {
@@ -74,7 +74,7 @@ function renderLicense(license) {
     return `![License: ${license}](https://img.shields.io/badge/License-${license}-lightblue.svg)`
 }
 
-// // TODO: Create a function to write README file
+// function to write README file
 function writeReadMe (data) {
 return `
 # ${data.title}
@@ -112,10 +112,7 @@ or email me at: ${data.email}
 `
 }
 
-// // TODO: Create a function to initialize app
+// initialize app
 questions().then((data) => writeFileAsync('./dist/README.md', writeReadMe(data)))
     .then(() => console.log('New README.md written successfully'))
     .catch((err) => console.log(err));
-
-// // Function call to initialize app
-// init();
