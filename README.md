@@ -16,6 +16,8 @@ Node.js application used to build a README.md file based on a series of prompts 
 
 ## Walkthrough Video
 
+<video src='./assets/application-walkthrough.mp4'></video>
+
 ## Contributors
 This application was created by Andrew Secore
     
