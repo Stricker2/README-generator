@@ -1,5 +1,5 @@
 
-# ReadMe Generator
+# README generator
 
 ## Description:
 Generates README.md file based on prompts/questions answered in this application.
@@ -23,7 +23,7 @@ Need to have node.js installed on computer, as well as a package-lock.json file 
 
 ### Tests:
 To run a test, open the terminal/console and run the following:
-no tests at this time
+no test at this time
 
 ### Contributing:
 no contributions being taken at this time
